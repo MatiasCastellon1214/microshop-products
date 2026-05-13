@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     postgres_port: str | None = Field(default=None, alias="POSTGRES_PORT")
     postgres_db: str | None = Field(default=None, alias="POSTGRES_DB")
     database_url: str | None = Field(default=None, alias="DATABASE_URL")
+    users_service_url: str | None = Field(default=None, alias="USERS_SERVICE_URL")
 
     jwt_secret: str = Field(default="change-me-in-production", alias="JWT_SECRET")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")

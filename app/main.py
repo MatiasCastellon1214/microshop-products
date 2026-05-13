@@ -21,7 +21,7 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
-    #lifespan=lifespan,
+    lifespan=lifespan,
 )
 
 #app.include_router(auth_router.router)
@@ -48,6 +48,6 @@ def readiness(session: SessionDep):
     return {"status": "ready", "database": "ok"}
 
 
-# @app.on_event("startup")
-# def on_startup():
-#     create_db_and_tables()
+@app.on_event("startup")
+def on_startup():
+    create_db_and_tables()
